@@ -159,6 +159,7 @@ type SQLNode interface {
 // Visitor implements the state store and traversal function for the AST
 type Visitor interface {
 	Visit(node SQLNode) (kontinue bool, err error)
+	Validate(string, string) error
 }
 
 // GenericWalk calls visitor on every node.
